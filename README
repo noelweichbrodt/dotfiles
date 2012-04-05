@@ -1,0 +1,6 @@
+this is just a copy of my working .gitconfig that is manually updated.
+
+to create these aliased commands in git, copy the desired alias from the gitconfig [alias] section and prepend it with "git --config --global alias."
+
+for example, 
+git config --global alias.prettyfiles "log --graph --diff-filter[ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset'"
