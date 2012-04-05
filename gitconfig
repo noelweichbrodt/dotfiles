@@ -1,0 +1,9 @@
+[user]
+	name = Noel Weichbrodt
+	email = noel@weichbrodt.org
+[color]
+[color]
+	ui = auto
+[alias]
+	prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	prettyfiles = log --graph --diff-filter[ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset'
