@@ -9,6 +9,9 @@
 [alias]
 	prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	prettyfiles = log --graph --diff-filter[ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset'
+	m = git merge --no-commit 
+	pl = git checkout HEAD
+	pc = git checkout
 	amend = commit --amend -C HEAD
 	changes = diff --name-status -r
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
