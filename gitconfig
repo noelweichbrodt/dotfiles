@@ -7,18 +7,16 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = input
 [alias]
-	prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	prettyfiles = log --graph --diff-filter[ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset'
-	m = git merge --no-commit 
-	pl = git checkout HEAD
-	pc = git checkout
-	amend = commit --amend -C HEAD
 	changes = diff --name-status -r
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
 	lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	ls-ignored = ls-files --exclude-standard --ignored --others
-	ra = !git log --graph --abbrev-commit --date=relative -20 --all --pretty='format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+	lf = log --graph --diff-filter [ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lr = log ORIG_HEAD.. --stat --no-merges
+	li = ls-files --exclude-standard --ignored --others
 	undo = reset --soft HEAD^
+	pl = git checkout HEAD
+	pr = git checkout
+	amend = commit --amend -C HEAD
 [color]
 	ui = auto
 [color "branch"]
