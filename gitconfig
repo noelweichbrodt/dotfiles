@@ -2,8 +2,13 @@
 	name = Noel Weichbrodt
 	email = noel@mailinator.com
 [color]
-[color]
 	ui = auto
 [alias]
 	prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	prettyfiles = log --graph --diff-filter[ACDMR] --name-status --pretty --source --abbrev-commit --format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green(%cr) %C(bold blue)<%an>%Creset'
+[core]
+	whitespace = trailing-space,space-before-tab
+[diff]
+	renames = copies
+[merge]
+	stat = true
