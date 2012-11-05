@@ -17,6 +17,7 @@
 	pl = git checkout HEAD
 	pr = git checkout
 	amend = commit --amend -C HEAD
+	check = "!git fetch; git log HEAD.. --oneline"
 [color]
 	ui = auto
 [color "branch"]
