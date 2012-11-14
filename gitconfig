@@ -5,7 +5,7 @@
 	user = noelweichbrodt
 [core]
 	whitespace = trailing-space,space-before-tab
-	autocrlf = input
+	autocrlf = false
 [alias]
 	changes = diff --name-status -r
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
