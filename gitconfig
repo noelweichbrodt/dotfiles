@@ -17,6 +17,8 @@
 	undo = reset --soft HEAD^
 	pl = git checkout HEAD
 	pr = git checkout
+	merge-dry = "!f() { git merge-tree `git merge-base $2 $1` $2 $1; }; f" #check how the merge of dev into master will go: git dry dev master
+	merge-wet = "!f() { git merge --no-commit --no-ff $1; }; f"
 	amend = commit --amend -C HEAD
 	check = "!git fetch; git log HEAD.. --oneline"
 [color]
