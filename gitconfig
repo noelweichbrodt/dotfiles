@@ -7,6 +7,7 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
 [alias]
+	yolo = !"git commit -am 'DEAL WITH IT' && git push -f origin master"
 	changes = diff --name-status -r
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
 	lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
