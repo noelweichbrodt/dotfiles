@@ -22,6 +22,7 @@
 	merge-wet = "!f() { git merge --no-commit --no-ff $1; }; f"
 	amend = commit --amend -C HEAD
 	check = "!git fetch; git log HEAD.. --oneline"
+	unmaster = "if() { git log HEAD ^$(git merge-base master HEAD) --no-merges $1; }; f"
 [color]
 	ui = auto
 [color "branch"]
