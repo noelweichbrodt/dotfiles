@@ -7,7 +7,7 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
 [alias]
-        am = "!f() { git commit -a -m $1; }; f"
+        am = "!f() { git commit -a -m '$1'; }; f"
 	amend = commit --amend -C HEAD
         b = branch -b
         c = checkout
