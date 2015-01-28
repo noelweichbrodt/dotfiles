@@ -7,22 +7,26 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
 [alias]
-	yolo = !"git commit -am 'DEAL WITH IT' && git push -f origin master"
+        am = "!f() { git commit -a -m $1; }; f"
+	amend = commit --amend -C HEAD
+        b = branch -b
+        c = checkout
 	changes = diff --name-status -r
+	check = "!git fetch; git log HEAD.. --oneline"
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
+	lc = "!f() { git log --author=$1 --graph --diff-filter=ACDMR --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset'; }; f"
+	lf = log --graph --diff-filter=ACDMR --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	lf = log --graph --diff-filter [ACDMR] --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	lc = "!f() { git log --author=$1 --graph --diff-filter [ACDMR] --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset'; }; f"
-	lr = log ORIG_HEAD.. --stat --no-merges
 	li = ls-files --exclude-standard --ignored --others
-	undo = reset --soft HEAD^
+	lr = log ORIG_HEAD.. --stat --no-merges
 	pl = git checkout HEAD
 	pr = git checkout
 	merge-dry = "!f() { git merge-tree `git merge-base $2 $1` $2 $1; }; f" #check how the merge of dev into master will go: git dry dev master
 	merge-wet = "!f() { git merge --no-commit --no-ff $1; }; f"
-	amend = commit --amend -C HEAD
-	check = "!git fetch; git log HEAD.. --oneline"
+        s = status
+	undo = reset --soft HEAD^
 	unmaster = "if() { git log HEAD ^$(git merge-base master HEAD) --no-merges $1; }; f"
+	yolo = !"git commit -am 'DEAL WITH IT' && git push -f origin master"
 [color]
 	ui = auto
 [color "branch"]
