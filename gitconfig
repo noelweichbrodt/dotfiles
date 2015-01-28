@@ -7,12 +7,14 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
 [alias]
-        am = "!f() { git commit -a -m '$1'; }; f"
+        cam = !git add -A && git commit -m
 	amend = commit --amend -C HEAD
         b = branch -b
         c = checkout
+        cb = checkout -b
 	changes = diff --name-status -r
 	check = "!git fetch; git log HEAD.. --oneline"
+        d1 = diff HEAD~1 HEAD
 	l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
 	lc = "!f() { git log --author=$1 --graph --diff-filter=ACDMR --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset'; }; f"
 	lf = log --graph --diff-filter=ACDMR --name-status --pretty --source --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
