@@ -9,7 +9,7 @@
 [alias]
         cam = !git add -A && git commit -m
 	amend = commit --amend -C HEAD
-        b = branch -b
+        b = branch
         c = checkout
         cb = checkout -b
 	changes = diff --name-status -r
