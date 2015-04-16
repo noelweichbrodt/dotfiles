@@ -8,6 +8,7 @@
 	autocrlf = false
 [alias]
         cam = !git add -A && git commit -m
+        cm = commit -m 
 	amend = commit --amend -C HEAD
         b = branch
         c = checkout
@@ -21,11 +22,13 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	li = ls-files --exclude-standard --ignored --others
 	lr = log ORIG_HEAD.. --stat --no-merges
-	pl = git checkout HEAD
-	pr = git checkout
+	pl = checkout HEAD
+        po = push origin
+	pr = checkout
 	merge-dry = "!f() { git merge-tree `git merge-base $2 $1` $2 $1; }; f" #check how the merge of dev into master will go: git dry dev master
 	merge-wet = "!f() { git merge --no-commit --no-ff $1; }; f"
         s = status
+        su = submodule update --init
 	undo = reset --soft HEAD^
 	unmaster = "if() { git log HEAD ^$(git merge-base master HEAD) --no-merges $1; }; f"
 	yolo = !"git commit -am 'DEAL WITH IT' && git push -f origin master"
@@ -52,3 +55,5 @@
 	stat = true
 [advice]
 	pushNonFastForward = false
+[push]
+	default = matching
