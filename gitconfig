@@ -6,7 +6,6 @@
         gpgsign = true
 [github]
 	user = noelweichbrodt
-        token = e5dc39284f3fe3f45e266c7bdd4dd535853fafd3
 [core]
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
