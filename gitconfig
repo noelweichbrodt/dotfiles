@@ -1,11 +1,12 @@
 [user]
 	name = Noel Weichbrodt
 	email = nweichbrodt@opentable.com
-        signingkey = D6960BE4
+        signingkey = ********
 [commit]
         gpgsign = true
 [github]
 	user = noelweichbrodt
+	toke = ******************************
 [core]
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
