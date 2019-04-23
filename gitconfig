@@ -1,6 +1,6 @@
 [user]
 	name = Noel Weichbrodt
-	email = nweichbrodt@opentable.com
+	email = noel@weichbrodt.org
         signingkey = ********
 [commit]
         gpgsign = true
@@ -10,6 +10,7 @@
 [core]
 	whitespace = trailing-space,space-before-tab
 	autocrlf = false
+	editor = emacs
 [alias]
   cam = !git add -A && git commit -m
   cm = commit -m 
@@ -64,3 +65,5 @@
 	pushNonFastForward = false
 [push]
 	default = matching
+[credential]
+	helper = osxkeychain
